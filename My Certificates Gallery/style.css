@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+:root {
+  --heading-color: rgb(124, 120, 120);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Archivo Black', sans-serif;
+}
+
+#wrapper {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.container {
+  max-width: 1250px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+.container h1 {
+  color: var(--heading-color);
+  margin: 30px 50px;
+  text-align: center;
+  font-size: 3rem;
+  text-shadow: 1px 2px 2px black;
+  letter-spacing: 2px;
+}
+.gallery {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.card {
+  width: 32%;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.card:hover {
+  transform: scale(1.5);
+  transition: 0.5s;
+  box-shadow: drop-shadow(0 0 10px #333);
+  z-index: 2;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 0 20px #333;
+  filter: grayscale(100%);
+}
+.card img:hover {
+  filter: grayscale(0%);
+}
+.card figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 45px;
+  width: 100%;
+  height: 30%;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  opacity: 0;
+  border-radius: 0 0 10px 10px;
+  transition: 0.3s;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+}
+.card:hover figcaption {
+  opacity: 1;
+  transform: scale(1.03);
+}
+.info {
+  color: rgb(124, 120, 120);
+  text-align: center;
+  font-size: 1rem;
+}
+.info:hover {
+  transform: scale(1.2);
+  transition: 1s;
+  color: rgb(255, 85, 0);
+}
+@media(max-width:1000px){
+  .container h1{
+    font-size: 2rem;
+    margin: 30px 30px;
+  }
+  .card figcaption{
+    display: none;
+  }
+  
+}
+@media(max-width:500px){
+  .container h1{
+    font-size: 1rem;
+    margin: 30px 0px;
+  }
+   .card figcaption{
+    display: none;
+  }
+}
